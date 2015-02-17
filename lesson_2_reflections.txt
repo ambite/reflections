@@ -7,6 +7,24 @@ How is the staging area different from the working directory and the repository?
 
     The staging area holds the files that need to be tracked by the repository, before we decide to commit them. The working directory just holds all the files in that directory. The advantage of the staging area is that we can add a subset of the files of the working directory (i.e., only track a subset), as well as add more files or remove them from tracking.
 
+Commands
+
+  633  cd asteroids/
+  634  git checkout master
+  635  git log
+  636  got diff df03538 25ede83
+  638  git status
+  639  git diff
+  641  git add game.js
+  642  git status
+  643  git diff --staged
+  644  git commit
+  645  git diff --staged
+  646  git diff
     
  
+How can you use the staging area to make sure you have one commit per logical change?
+
+    By adding the files relevant to that logical change, and commiting them together.
+
 
