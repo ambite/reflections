@@ -25,7 +25,7 @@ Commands
  
 How can you use the staging area to make sure you have one commit per logical change?
 
-    By adding the files relevant to that logical change, and commiting them together.
+    By adding the files relevant to that logical change, and committing them together.
 
 What are some situations when branches would be helpful in keeping your history organized? How would branches help?
 
@@ -49,3 +49,31 @@ How do the diagrams help you visualize the branch structure?
     You can follow the parent of a commit and understand which commits are associated with each branch
 
     git log --graph --oneline master easy-mode
+
+What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
+
+     The changes done by each or the branches are merged for each file. To figure out the differences that can be safely merged, it compares with the last common ancestor commit of both branches. It assumes that the changes done in both branches are correct if they do not conflict. 
+
+The diagram is useful to see the parent of each commit and the multiple branches.
+
+  566  git branch
+  567  git status
+  568  git merge master coins
+  575  git diff 3884 e5211
+  576  git merge --abort
+  577  git log
+  578  git diff 3884 e5211
+  579  git add game.js
+  580  git commit 
+  581  git status
+  582  git merge master coins
+  584  git log
+  585  git show 4035
+  586  git branch -d coins
+  588  git log --graph --oneline
+  589  git diff
+  590  git add game.js
+  591  git commit
+  592  git log
+  593  git log --graph --oneline
+
