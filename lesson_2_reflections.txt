@@ -27,4 +27,20 @@ How can you use the staging area to make sure you have one commit per logical ch
 
     By adding the files relevant to that logical change, and commiting them together.
 
+What are some situations when branches would be helpful in keeping your history organized? How would branches help?
+
+     Branches are helpful to experiment with different changes to the code, while keeping a main working copy (the master branch). 
+
+  503  cd ../asteroids/
+  504  git branch
+  505  git branch easy-mode
+  506  git branch
+  507  git checkout easy-mode
+  508  git branch
+  509  git add game.js
+  510  git commit
+  511  git diff
+  512  git log
+  513  git diff c2212 e5211
+  514  git status
 
