@@ -1,5 +1,5 @@
 
-What happens when you initialize a repository? Why do you need to do it?
+*** What happens when you initialize a repository? Why do you need to do it?
 
      Git creates a directory .git to hold the metatada about the repository.
 
@@ -23,7 +23,7 @@ Commands
   646  git diff
     
  
-How can you use the staging area to make sure you have one commit per logical change?
+*** How can you use the staging area to make sure you have one commit per logical change?
 
     By adding the files relevant to that logical change, and committing them together.
 
@@ -44,13 +44,13 @@ What are some situations when branches would be helpful in keeping your history 
   513  git diff c2212 e5211
   514  git status
 
-How do the diagrams help you visualize the branch structure?
+*** How do the diagrams help you visualize the branch structure?
 
     You can follow the parent of a commit and understand which commits are associated with each branch
 
     git log --graph --oneline master easy-mode
 
-What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
+*** What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
 
      The changes done by each or the branches are merged for each file. To figure out the differences that can be safely merged, it compares with the last common ancestor commit of both branches. It assumes that the changes done in both branches are correct if they do not conflict. 
 
@@ -77,3 +77,22 @@ The diagram is useful to see the parent of each commit and the multiple branches
   592  git log
   593  git log --graph --oneline
 
+*** What are the pros and cons of Git’s automatic merging vs. always doing
+merges manually?
+
+       When there are no conflicts git automatic merges the files
+       which is convenient and thorough, which makes the programmer more
+       productive. 
+
+       If there are conflicts, git points out the sections of difference,
+       as well as the common ancestor code. This greatly faciliates
+       addressing the conflicts.
+
+
+  527  git merge master easy-mode
+  528  git status
+  529  git add game.js
+  530  git status
+  531  git commit
+  532  git log
+  533  git log -n 1
