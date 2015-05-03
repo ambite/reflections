@@ -8,7 +8,11 @@ git remote add origin https://github.com/ambite/reflections.git
 
 git remote -v
 
+# to send all the commots in the master brach to the remote repository (called origin by convention)
 git push origin master
+
+# to get the changes done in github by self or by other contributor into the local repository
+git pull origin master
 
 Reflections
 
