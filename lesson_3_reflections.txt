@@ -2,3 +2,9 @@
 
 # Set git to use the osxkeychain credential helper
 git config --global credential.helper osxkeychain
+
+git remote add origin https://github.com/ambite/reflections.git
+
+git remote -v
+
+git push origin master
