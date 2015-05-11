@@ -1,3 +1,4 @@
+*** Code 
 
 Setting up the remote github repository
 
@@ -32,7 +33,67 @@ origin	https://github.com/ambite/recipes.git (push)
   572  git status
   573  git push origin master
 
-Reflections
+
+# Merging when there are both local and remote changes
+
+git pull origin master = git fetch origin/master + git merge master origin/master
+
+$ git branch -a
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+
+# update origin/master with all the changes in github
+git fetch origin
+
+git log origin/master
+
+git diff origin/master master
+
+$ git status
+On branch master
+Your branch and 'origin/master' have diverged,
+and have 1 and 1 different commit each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+nothing to commit, working directory clean
+
+$ git merge master origin/master
+Auto-merging chili-recipe.txt
+CONFLICT (content): Merge conflict in chili-recipe.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+Resolved issues by editing chili-recipe.txt
+ git add chili-recipe.txt
+ git commit
+
+I could have got the same effect by running:
+
+ git pull origin master
+
+
+ambite (master) recipes $ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+nothing to commit, working directory clean
+
+ambite (master) recipes $ git push origin master
+Counting objects: 6, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 612 bytes | 0 bytes/s, done.
+Total 6 (delta 4), reused 0 (delta 0)
+To https://github.com/ambite/recipes.git
+   2dad65f..e1bc9a4  master -> master
+
+ambite (master) recipes $ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean
+
+
+
+*** Reflections
 
 When would you want to use a remote repository rather than keeping all your work
 local?
@@ -60,7 +121,8 @@ use one instead of another?
 What is the benefit of having a copy of the last known state of the remote
 stored locally?
 
-    Fill in your answer here
+    You can use git diff to find differences, 
+    You can also use git merge to resolve the differences.
 
 How would you collaborate without using Git or GitHub?  What would be easier,
 and what would be harder?
