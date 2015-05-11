@@ -8,11 +8,29 @@ git remote add origin https://github.com/ambite/reflections.git
 
 git remote -v
 
-# to send all the commots in the master brach to the remote repository (called origin by convention)
+# to send all the commits in the master brach to the remote repository (called origin by convention)
 git push origin master
 
 # to get the changes done in github by self or by other contributor into the local repository
 git pull origin master
+
+# to copy a forked repository into my local machine
+git clone https://github.com/ambite/recipes.git
+
+# no need to set up a remote in github when forking. It's done automatically.
+ambite (master) recipes $ git remote -v
+origin	https://github.com/ambite/recipes.git (fetch)
+origin	https://github.com/ambite/recipes.git (push)
+
+# To set up collaborators in github go to settings
+
+# Adding a local file and pushing to github
+  568  git add rosquillas-recipe.txt
+  569  git status
+  570  git commit
+  571  git log
+  572  git status
+  573  git push origin master
 
 Reflections
 
@@ -31,7 +49,13 @@ automatically stay up-to-date with your remote repository?
 Describe the differences between forks, clones, and branches.  When would you
 use one instead of another?
 
-    Fill in your answer here
+    A fork is a copy of somebody else's repository done at github. It
+    credits the original creator. A clone is copy of another
+    repository, generally a local copy of a remote github
+    repository. After doing a fork, usually one clones the fork to the
+    local machine to work on it (rather than on github). A branch is a
+    different line of development for some code. It helps to explore
+    alternatives. Branches can be merged into other branches. 
 
 What is the benefit of having a copy of the last known state of the remote
 stored locally?
