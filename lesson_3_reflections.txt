@@ -77,6 +77,7 @@ Your branch is ahead of 'origin/master' by 2 commits.
   (use "git push" to publish your local commits)
 nothing to commit, working directory clean
 
+
 ambite (master) recipes $ git push origin master
 Counting objects: 6, done.
 Delta compression using up to 8 threads.
@@ -85,6 +86,7 @@ Writing objects: 100% (6/6), 612 bytes | 0 bytes/s, done.
 Total 6 (delta 4), reused 0 (delta 0)
 To https://github.com/ambite/recipes.git
    2dad65f..e1bc9a4  master -> master
+
 
 ambite (master) recipes $ git status
 On branch master
