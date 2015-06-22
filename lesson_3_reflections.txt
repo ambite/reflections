@@ -225,7 +225,7 @@ stored locally?
 How would you collaborate without using Git or GitHub?  What would be easier,
 and what would be harder?
 
-    If working with only another person, we could share files in dropbox, which keeps versions. We could coordinate off-line to merge changes. However, with more than a couple of people, keeping track of cahnges and merging them will be extermely hard, so a tool like git or github would be much preferred.
+    If working with only another person, we could share files in dropbox, which keeps versions. We could coordinate off-line to merge changes. However, with more than a couple of people, keeping track of changes and merging them will be extremely hard, so a tool like git or github would be much preferred.
     
 
 When would you want to make changes in a separate branch rather than directly in
