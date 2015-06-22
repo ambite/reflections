@@ -187,7 +187,44 @@ Total 3 (delta 2), reused 0 (delta 0)
 To https://github.com/ambite/recipes.git
  + 0f36390...247d30e different-oil -> different-oil (forced update)
 
+-- simulating Sarah's changes
+ambite Git-and-GitHub-02015-02 $ bash sarah_changes_2.sh https://github.com/ambite/recipes.git
 
+  558  bash sarah_changes_2.sh https://github.com/ambite/recipes.git
+  559  cd recipes/
+  560  git log
+  561  git checkout master
+  562  git log
+  563  git pull origin master
+  
+ambite (master) recipes $ git checkout different-oil 
+Switched to branch 'different-oil'
+ambite (different-oil) recipes $ git merge master different-oil 
+Auto-merging cake-recipe.txt
+CONFLICT (content): Merge conflict in cake-recipe.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+  568  git checkout different-oil 
+  569  git merge master different-oil 
+  571  git add cake-recipe.txt
+  573  git commit 
+
+ambite (different-oil) recipes $ git push origin different-oil 
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 328 bytes | 0 bytes/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+To https://github.com/ambite/recipes.git
+   247d30e..78c497d  different-oil -> different-oil
+
+  583  git checkout different-oil 
+  584  git log
+  587  git checkout master 
+  588  git pull origin master
+  589  git status
+  590  git log
+  591  git log -n 1
 
 
 
@@ -264,4 +301,8 @@ and what would be harder?
 When would you want to make changes in a separate branch rather than directly in
 master?  What benefits does each approach have?
 
-    Fill in your answer here
+    Making changes in a separate branch allows collaborators to see
+    the changes, resolve conflicts with other changes the may have
+    made, and only merge back into the master when all the parallel
+    changes have been resolved. After this you can discard the
+    separate branch.
