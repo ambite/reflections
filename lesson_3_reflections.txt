@@ -191,6 +191,35 @@ To https://github.com/ambite/recipes.git
 
 
 
+----
+
+ambite (master) reflections $ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   lesson_3_reflections.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ambite (master *) reflections $ git add lesson_3_reflections.txt
+
+ambite (master +) reflections $ git commit 
+[master da5fe4b] Fix typos
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ 
+ambite (master) reflections $ git push origin master
+Counting objects: 9, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 1.81 KiB | 0 bytes/s, done.
+Total 9 (delta 6), reused 0 (delta 0)
+To https://github.com/ambite/reflections.git
+   8001be5..da5fe4b  master -> master
+
+
+
 *** Reflections
 
 When would you want to use a remote repository rather than keeping all your work
@@ -225,7 +254,11 @@ stored locally?
 How would you collaborate without using Git or GitHub?  What would be easier,
 and what would be harder?
 
-    If working with only another person, we could share files in dropbox, which keeps versions. We could coordinate off-line to merge changes. However, with more than a couple of people, keeping track of changes and merging them will be extremely hard, so a tool like git or github would be much preferred.
+    If working with only another person, we could share files in
+    dropbox, which keeps versions. We could coordinate off-line to
+    merge changes. However, with more than a couple of people, keeping
+    track of changes and merging them will be extremely hard, so a
+    tool like git or github would be much preferred.
     
 
 When would you want to make changes in a separate branch rather than directly in
