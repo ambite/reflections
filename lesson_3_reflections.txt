@@ -94,6 +94,102 @@ Your branch is up-to-date with 'origin/master'.
 nothing to commit, working directory clean
 
 
+git branch different-oil
+git checkout different-oil
+git branch
+
+ambite (different-oil) recipes $ git branch
+* different-oil
+  master
+
+ambite (different-oil) recipes $ git status
+On branch different-oil
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   cake-recipe.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ambite (different-oil *) recipes $ git add cake-recipe.txt
+
+ambite (different-oil +) recipes $ git commit
+[different-oil a0f598f] Change vegetable by canola oil
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ 
+ambite (different-oil) recipes $ git push origin different-oil
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 299 bytes | 0 bytes/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+To https://github.com/ambite/recipes.git
+ * [new branch]      different-oil -> different-oil
+
+
+ambite (different-oil) recipes $ git status
+On branch different-oil
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   cake-recipe.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ambite (different-oil *) recipes $ git add cake-recipe.txt
+
+ambite (different-oil +) recipes $ git status
+On branch different-oil
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   cake-recipe.txt
+
+ambite (different-oil +) recipes $ git commit
+[different-oil 0f36390] Fis misspelling of canola
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ 
+ambite (different-oil) recipes $ git push origin different-oil 
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 290 bytes | 0 bytes/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+To https://github.com/ambite/recipes.git
+   a0f598f..0f36390  different-oil -> different-oil
+
+ambite (different-oil) recipes $ git commit 
+On branch different-oil
+nothing to commit, working directory clean
+
+ambite (different-oil) recipes $ git commit --amend
+[different-oil 247d30e] Fix misspelling of canola
+ Date: Sun Jun 21 21:49:34 2015 -0700
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ 
+ambite (different-oil) recipes $ git push origin different-oil 
+To https://github.com/ambite/recipes.git
+ ! [rejected]        different-oil -> different-oil (non-fast-forward)
+error: failed to push some refs to 'https://github.com/ambite/recipes.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+ambite (different-oil) recipes $ git push origin different-oil --force
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 294 bytes | 0 bytes/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+To https://github.com/ambite/recipes.git
+ + 0f36390...247d30e different-oil -> different-oil (forced update)
+
+
+
+
 
 *** Reflections
 
@@ -129,7 +225,8 @@ stored locally?
 How would you collaborate without using Git or GitHub?  What would be easier,
 and what would be harder?
 
-    Fill in your answer here
+    If working with only another person, we could share files in dropbox, which keeps versions. We could coordinate off-line to merge changes. However, with more than a couple of people, keeping track of cahnges and merging them will be extermely hard, so a tool like git or github would be much preferred.
+    
 
 When would you want to make changes in a separate branch rather than directly in
 master?  What benefits does each approach have?
